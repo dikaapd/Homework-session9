@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-08-20T08:43:04.961Z",
+    "end": "2026-08-20T08:43:10.954Z",
+    "duration": 5993,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5f8361a8-2fd6-4050-9525-9c743a2343d2",
+      "title": "",
+      "fullFile": "C:\\Users\\ThinkPad\\Downloads\\Homework-session9\\Homework-Session9\\login-addUser.js",
+      "file": "\\Homework-Session9\\login-addUser.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b4840676-9451-4986-9913-1de4f4a57031",
+          "title": "Login",
+          "fullFile": "C:\\Users\\ThinkPad\\Downloads\\Homework-session9\\Homework-Session9\\login-addUser.js",
+          "file": "\\Homework-Session9\\login-addUser.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Login\"",
+              "fullTitle": "Login \"before all\" hook in \"Login\"",
+              "timedOut": false,
+              "duration": 636,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.manage().window().maximize();",
+              "err": {},
+              "uuid": "15e7abad-8861-4252-ba9b-c87b07ead954",
+              "parentUUID": "b4840676-9451-4986-9913-1de4f4a57031",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Login\"",
+              "fullTitle": "Login \"after all\" hook in \"Login\"",
+              "timedOut": false,
+              "duration": 53,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "3cb8c7a4-8904-4741-b803-c2a544d00f74",
+              "parentUUID": "b4840676-9451-4986-9913-1de4f4a57031",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Login Login",
+              "timedOut": false,
+              "duration": 4714,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"https://belajar-bareng.onrender.com/users\");\nlet usernameInput = await driver.findElement(\n  By.css('[data-testid=\"username-input\"]'),\n);\nlet passwordInput = await driver.findElement(\n  By.css('[data-testid=\"password-input\"]'),\n);\nawait usernameInput.sendKeys(\"admin\");\nawait passwordInput.sendKeys(\"admin\");\nlet loginButton = await driver.findElement(\n  By.css('[data-testid=\"login-button\"]'),\n);\nawait loginButton.click();\nlet listUsers = await driver.wait(\n  until.elementLocated(By.css(\"h2\")),\n  10000,\n);\nlet listUsersText = await listUsers.getText();\nassert.strictEqual(listUsersText, \"List Users\");",
+              "err": {},
+              "uuid": "bb0c379c-da08-42e1-a49e-a092beda3426",
+              "parentUUID": "b4840676-9451-4986-9913-1de4f4a57031",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add User",
+              "fullTitle": "Login Add User",
+              "timedOut": false,
+              "duration": 585,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let addButton = await driver.wait(\n  until.elementLocated(By.css('[data-testid=\"add-button\"]')),\n  10000,\n);\nawait addButton.click();\nlet usernameInput = await driver.findElement(\n  By.css('[data-testid=\"username-input\"]'),\n);\nlet ageInput = await driver.findElement(\n  By.css('[data-testid=\"age-input\"]'),\n);\nawait usernameInput.sendKeys(\"Automation\");\nawait ageInput.sendKeys(\"90\");\nlet submitButton = await driver.findElement(\n  By.css('[data-testid=\"submit-button\"]'),\n);\nawait submitButton.click();\nlet successAdd = await driver.wait(\n  until.elementLocated(By.xpath(\"//*[@id='top-right']\")),\n  10000,\n);\nawait successAdd.isDisplayed();",
+              "err": {},
+              "uuid": "a214f998-5dd2-40e3-a979-b16a0bd5e8c3",
+              "parentUUID": "b4840676-9451-4986-9913-1de4f4a57031",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bb0c379c-da08-42e1-a49e-a092beda3426",
+            "a214f998-5dd2-40e3-a979-b16a0bd5e8c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5299,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 50000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 50000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.8.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}

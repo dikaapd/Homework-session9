@@ -1,0 +1,22 @@
+{
+  "name": "Homework-Session9",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "Homework-Session9": "mocha Homework-Session9 --timeout 50000",
+    "report-mochawesome": "mocha Homework-Session9 --timeout 50000 --reporter mochawesome",
+    "report-simple-html": "mocha Homework-Session9 --timeout 50000 --reporter mocha-simple-html-reporter --reporter-options output=report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "selenium-webdriver": "^4.47.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.8.0",
+    "mocha-simple-html-reporter": "^2.0.0",
+    "mochawesome": "^8.0.1"
+  }
+}
